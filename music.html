@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="song/music.css">
+</head>
+<body>
+
+    
+        <h1>Music Player</h1>
+
+              <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mini-game.html">Howazat</a></li>
+             <li><a href="football.html">Kick-Off</a></li>
+             <li><a href="calen.html">Mini-Calender</a></li>
+              <li><a href="exercises.html">Exercises</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+         <h2>Select an Artist</h2>
+        <div id="artistSelection">
+            
+            <button class="artistBtn" data-artist="artist1">Kishore Kumar<img src="song/kishore.png" height= "180" width="180"></button>
+            <button class="artistBtn" data-artist="artist2">Kumar Sanu<img src="song/kumar.png" height= "180" width="180"></button>
+            <button class="artistBtn" data-artist="artist3">Lata Mangeshkar<img src="song/lata.png" height= "180" width="180"></button>
+            <button class="artistBtn" data-artist="artist4">Asha Bhosle<img src="song/asha.png" height= "180" width="180"></button>
+        </div>
+
+        <div id="songSelection" style="display: none;">
+            <h2>Select a Song</h2>
+            <ul id="songList"></ul>
+        </div>
+
+        <div id="player" style="display: none;">
+            <h2>Now Playing</h2>
+            <p id="currentSongTitle"></p>
+            <audio id="audioPlayer" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <script src="song/music.js"></script>
+</body>
+<footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+</html>

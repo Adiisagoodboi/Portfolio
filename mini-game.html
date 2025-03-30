@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOWAZAT</title>
+    <link rel="stylesheet" href="cricket/mini-game.css">
+</head>
+<body>
+
+
+
+    <h1 class="game-title"><span style="color:yellow;">HOWAZAT</span> : Cricket Mini-Game</h1>
+
+        <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="football.html">Kick-Off</a></li>
+            <li><a href="music.html">Music-Player</a></li>
+             <li><a href="calen.html">Mini-Calender</a></li>
+            <li><a href="exercises.html">Exercises</a></li>
+            
+            
+            
+        </ul>
+    </nav>
+
+    <!-- Target Score -->
+    <div class="target-score">
+        <p>🏏 Chase the Target of <span id="target-score">0</span> Runs within 4 Overs !</p>
+    </div>
+
+    <!-- Batsman Selection -->
+    <div id="batsman-selection" class="batsman-selection">
+        <h2>Choose Your Batsman</h2>
+        <div id="batsman-options" class="batsman-list"></div>
+    </div>
+
+    <!-- Main Game UI (Initially Hidden) -->
+    <div id="game-container" class="game-container" style="display: none;">
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <div class="info">
+            <div class="team-info">
+                <span class="team-name">YOUR SCORE</span>
+                <span id="score">0/0</span>
+                <p>Runs Needed: <span id="runs-required">0</span></p>
+            </div>
+            <div class="target-info">
+               
+                <p>Balls Remaining: <span id="balls-left">0</span></p>
+                <p>Wickets Left: <span id="wickets-left">3</span></p>
+                <p>Current Run Rate: <span id="current-run-rate">0.00</span></p>
+                <p>Required Run Rate: <span id="required-run-rate">0.00</span></p>
+            </div>
+        </div>
+
+        <!-- Commentary Box -->
+        <div id="commentary-box" class="commentary-box">
+            <p id="commentary">Let's play! 🏏</p>
+        </div>
+
+        <!-- Run Selection with Percentages -->
+        <div class="run-selection">
+            <button class="run-btn" onclick="playShot(1)">1 Run (<span id="prob-1">100%</span>)</button>
+            <button class="run-btn" onclick="playShot(2)">2 Runs (<span id="prob-2">100%</span>)</button>
+            <button class="run-btn" onclick="playShot(4)">4 Runs (<span id="prob-4">50%</span>)</button>
+            <button class="run-btn" onclick="playShot(6)">6 Runs (<span id="prob-6">30%</span>)</button>
+        </div>
+
+    </div>
+    </div>
+
+
+    <!-- Winning & Losing Messages -->
+    <div id="win-message" class="win-message" style="display: none;">
+        <img src="trophy.png" alt="Trophy" class ="trophy-img">
+        <h2>🎉 Congratulations! You won!</h2>
+        <button class="play" onclick="restartGame()">Play Again</button>
+    </div>
+
+    <div id="lose-message" class="lose-message" style="display: none;">
+        <h2>😢 You Lost! Better Luck Next Time!</h2>
+        <button class="play" onclick="restartGame()">Play Again</button>
+    </div>
+
+
+    <!-- Game Rules Section -->
+    <div class="game-rules">
+        <h2>📜 Game Rules</h2>
+        <ul>
+            <li><strong>Target:</strong> Chase the given target within limited balls.</li>
+            <li><strong>Wickets:</strong> You have only 3 wickets.</li>
+            <li><strong>Runs Strategy:</strong>
+                <ul class="sub-rules">
+                    <li>1 Run & 2 Runs - Mostly Safe but you may be run-out.</li>
+                    <li>4 & 6 Runs - Higher chance of getting out if attempted repeatedly.</li>
+                </ul>
+            </li>
+            <li><strong>"%" Problem :</strong> "%"" Denotes the success rate of playing that shot, so play wisely .</li>
+            <li><strong>Winning Condition:</strong> Reach the target before losing all wickets and before the overs complete.</li>
+        </ul>
+    </div>
+
+    <script src="cricket/mini-game.js"></script>
+</body>
+<footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+
+</html>
